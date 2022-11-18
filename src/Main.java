@@ -45,9 +45,24 @@ public class Main {
         else if (clientDeviceYear >= 2015 && clientOS ==1) {printFullAndroid();}
     }
 
+    public static void printDeliveryDistance (int day) {
+        System.out.println("Потребуется дней: " + day);
+    }
+
+    public static int countDeliveryDistance() {
+        int deliveryDistance = 400;
+        int day;
+        if (deliveryDistance <= 20) {day = 1; printDeliveryDistance(day);
+            }
+        else {day = (deliveryDistance - 20) / 40 + 1;
+            printDeliveryDistance(day);}
+        return day;
+    }
+
     public static void main(String[] args) {
         countYearVes();
         findClientOs();
+        countDeliveryDistance();
 
     }
 }
